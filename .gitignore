@@ -1,0 +1,35 @@
+# Virtual environment
+folk_env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Training outputs
+outputs/
+
+# Raw audio dataset
+dataset/indian_folk_31/raw_sources/
+
+# Extracted feature files
+dataset/indian_folk_31/features/
+
+# Large archives
+*.7z
+*.zip
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+# Original large pickle datasets
+dataset/indian_folk_31/original/
+# Unnecessary training checkpoints
+saved_models/checkpoint_*.pt

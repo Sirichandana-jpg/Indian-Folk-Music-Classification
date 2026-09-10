@@ -1,0 +1,63 @@
+# Configuration file for Assam Folk Music Classification Project
+
+project:
+  name: "Indian_Folk_Music_Classification"
+  version: "1.0.0"
+  seed: 42
+  device: "cuda" # Automatically falls back to cpu if cuda is unavailable
+
+genres:
+  - "Bihu"
+  - "Kamrupi_Lokgeet"
+  - "Yakshagana"
+  - "Rouf"
+  - "Lavani"
+  - "Uttarakhandi"
+
+dataset:
+  raw_dir: "dataset"
+  processed_dir: "outputs/processed_data"
+  features_dir: "outputs/extracted_features"
+  split_ratio: [0.70, 0.15, 0.15] # Train, Validation, Test
+  target_sr: 22050
+  segment_duration: 5.0 # Seconds per segment
+  hop_duration: 2.5 # Seconds overlap for segmentation
+  mono: true
+  silence_top_db: 20
+  normalize_loudness: true
+
+features:
+  n_mfcc: 40
+  n_mels: 128
+  n_fft: 2048
+  hop_length: 512
+  win_length: 2048
+  fmin: 20
+  fmax: 11025
+
+augmentation:
+  pitch_shift_steps: [-2, 2]
+  time_stretch_rates: [0.8, 1.2]
+  noise_factor: 0.005
+  volume_gain_db: [-6, 6]
+  spec_augment:
+    freq_mask_param: 15
+    time_mask_param: 35
+    n_freq_masks: 2
+    n_time_masks: 2
+
+training:
+  batch_size: 16
+  epochs: 40
+  learning_rate: 0.0003
+  weight_decay: 0.001
+  early_stopping_patience: 8
+  scheduler: "reduce_on_plateau" # "reduce_on_plateau" or "cosine"
+  mixed_precision: true
+  checkpoint_dir: "saved_models"
+  logs_dir: "outputs/logs"
+
+outputs:
+  metrics_dir: "outputs/metrics"
+  plots_dir: "outputs/plots"
+  research_dir: "outputs/research"
