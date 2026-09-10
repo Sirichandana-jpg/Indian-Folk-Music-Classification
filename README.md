@@ -91,14 +91,15 @@ Indian-Folk-Music-Classification/
 ```
 
 ## Run the Application
-git clone https://github.com/Sirichandana-jpg/Indian-Folk-Music-Classification.git
-cd Indian-Folk-Music-Classification
-pip install -r requirements.txt
-python -m streamlit run streamlit_app/app.py
-python -m streamlit run streamlit_app/app.py
+- git clone https://github.com/Sirichandana-jpg/Indian-Folk-Music-Classification.git
+- cd Indian-Folk-Music-Classification
+- pip install -r requirements.txt
+- python -m streamlit run streamlit_app/app.py
+
 
 ## Project Report
 
+[IKS Internship Report](IKS_INTERNSHIP_REPORT.pdf)
 
 ## Internship
 
